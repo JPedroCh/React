@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useForm } from 'react-hook-form';
 import { Button, Flex} from '@chakra-ui/react';
 import { ChakraInput } from '../ChakraInput';

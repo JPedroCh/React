@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout>
+    <Layout direction="row">
       <NavigationCard 
         title="CEP"
         description="Busca de endereço por CEP"
