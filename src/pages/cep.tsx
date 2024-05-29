@@ -54,7 +54,7 @@ const Cep = () => {
   }
 
   return (
-    <Layout>
+    <Layout direction="row">
       <FormCard title="Busca de Endereço por CEP">
         <Input
           label="Número de CEP"

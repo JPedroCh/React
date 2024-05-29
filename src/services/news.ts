@@ -14,6 +14,20 @@ function createNews(data: ICreateNews) {
   }
 }
 
+function getNews() {
+  try {
+    return NEWS_API({
+      method: 'GET',
+      url: `/noticias`
+    })
+  } catch (error) {
+    console.error('Error: ', error);
+    throw error;
+  }
+}
+
+
 export default {
-  createNews
+  createNews,
+  getNews
 }

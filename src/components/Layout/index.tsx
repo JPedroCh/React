@@ -1,10 +1,14 @@
+import { PropsWithChildren } from "react";
 import { Background } from "./styles";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Layout = ({ children }: any) => {
+interface LayoutProps {
+  direction: "row" | "column";
+}
+
+const Layout = ({ children, direction }: PropsWithChildren<LayoutProps>) => {
 
   return (
-    <Background>
+    <Background style={{flexDirection: direction}}>
       {children}
     </Background>
   )
