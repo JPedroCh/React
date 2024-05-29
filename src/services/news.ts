@@ -1,5 +1,5 @@
 import { NEWS_API } from "./baseService";
-import { ICreateNews } from "./models/news";
+import { ICreateNews, INews } from "./models/news";
 
 function createNews(data: ICreateNews) {
   try {
@@ -26,8 +26,22 @@ function getNews() {
   }
 }
 
+function updateNews(data: INews) {
+  try {
+    return NEWS_API({
+      method: 'PUT',
+      data,
+      url: `/noticias/${data.id}`
+    })
+  } catch (error) {
+    console.error('Error: ', error);
+    throw error;
+  }
+}
+
 
 export default {
   createNews,
-  getNews
+  getNews,
+  updateNews
 }

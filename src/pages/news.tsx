@@ -9,15 +9,28 @@ import { INews } from "../services/models/news";
 import newsService from "../services/news";
 import { AxiosResponse } from "axios";
 import { toast } from "../components/Toast";
+import UpdateNewsForm from "../components/UpdateNewsForm";
 
 const News = () => {
   const [refreshRequest, setRefreshRequest] = useState<boolean>(false);
   const [newsList, setNewsList] = useState<INews[]>([])
+  const [selectedNews, setSelectedNews] = useState<INews>();
   const {
     isOpen: isOpenCreateNewsModal,
     onClose: onCloseCreateNewsModal,
     onOpen: onOpenCreateNewsModal,
   } = useDisclosure();
+
+  const {
+    isOpen: isOpenUpdateNewsModal,
+    onClose: onCloseUpdateNewsModal,
+    onOpen: onOpenUpdateNewsModal,
+  } = useDisclosure();
+
+  const handleUpdate = (news: INews) => {
+    if (news) setSelectedNews(news);
+    onOpenUpdateNewsModal();
+  };
 
   const fetchItems = async () => {
     try {
@@ -71,9 +84,9 @@ const News = () => {
                 <Td>{news.titulo}</Td>
                 <Td>{news.descricao}</Td>
                 <Td
-                  onClick={() => {
-                    console.log(news);
-                  }}
+                  onClick={
+                    () => handleUpdate(news)
+                  }
                   width="5%"
                 >
                   <button>
@@ -102,6 +115,27 @@ const News = () => {
             onClose={onCloseCreateNewsModal}
             refreshRequest={refreshRequest}
             setRefreshRequest={setRefreshRequest}
+          />
+        </Flex>
+      </Modal>
+      <Modal
+        title={`Atualizar Notícia`}
+        isOpen={isOpenUpdateNewsModal}
+        onClose={onCloseUpdateNewsModal}
+        size="4xl"
+      >
+        <Flex
+          height="100%"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          gap="16px"
+        >
+          <UpdateNewsForm
+            onClose={onCloseUpdateNewsModal}
+            refreshRequest={refreshRequest}
+            setRefreshRequest={setRefreshRequest}
+            selectedNews={selectedNews}
           />
         </Flex>
       </Modal>
