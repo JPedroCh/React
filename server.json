@@ -1,0 +1,39 @@
+{
+  "noticias": [
+    {
+      "id": "1",
+      "titulo": "Título da Notícia 1",
+      "descricao": "Descrição da Notícia 1"
+    },
+    {
+      "id": "2",
+      "titulo": "Título da Notícia 2",
+      "descricao": "Descrição da Notícia 2"
+    },
+    {
+      "id": "3",
+      "titulo": "Título da Notícia 3",
+      "descricao": "Descrição da Notícia 3"
+    },
+    {
+      "id": "4",
+      "titulo": "Título da Notícia 4",
+      "descricao": "Descrição da Notícia 4"
+    },
+    {
+      "id": "5",
+      "titulo": "Título da Notícia 5",
+      "descricao": "Descrição da Notícia 5"
+    },
+    {
+      "id": "6",
+      "titulo": "Título da Notícia 6",
+      "descricao": "Descrição da Notícia 6"
+    },
+    {
+      "id": "7",
+      "titulo": "Título da Notícia 7",
+      "descricao": "Descrição da Notícia 7"
+    }
+  ]
+}
