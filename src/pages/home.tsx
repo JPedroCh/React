@@ -1,4 +1,4 @@
-import NavigationCard from "../components/Card";
+import NavigationCard from "../components/NavigationCard";
 import Layout from "../components/Layout";
 import news from "../assets/news.png";
 import mailbox from "../assets/mailbox.svg";
@@ -19,7 +19,7 @@ const Home = () => {
         title="Notícias"
         description="Busca de endereço por CEP"
         image={news}
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/news")}
       />
     </Layout>
   );

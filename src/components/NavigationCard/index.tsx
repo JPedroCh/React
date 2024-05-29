@@ -17,7 +17,9 @@ const NavigationCard = ({ title, description, image, onClick }: NavigationCardPr
         <>{description}</>
         :<></>
       }
-      <Image src={image}/>
+      {
+        image && <Image src={image}/>
+      }
     </Card>
   )
 }
