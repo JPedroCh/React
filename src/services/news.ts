@@ -39,9 +39,23 @@ function updateNews(data: INews) {
   }
 }
 
+function deleteNews(data: INews) {
+  try {
+    return NEWS_API({
+      method: 'DELETE',
+      data,
+      url: `/noticias/${data.id}`
+    })
+  } catch (error) {
+    console.error('Error: ', error);
+    throw error;
+  }
+}
+
 
 export default {
   createNews,
   getNews,
-  updateNews
+  updateNews,
+  deleteNews
 }

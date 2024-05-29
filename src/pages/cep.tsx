@@ -62,7 +62,7 @@ const Cep = () => {
           type="text"
           value={searchForm.cepNumber}
           onChange={handleSearchForm}
-          placeholder="Insira o seu número de CEP"
+          placeholder="Insira o seu número"
           />
         <Button text="Buscar" onClick={register}/>
       </FormCard>
